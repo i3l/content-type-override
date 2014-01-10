@@ -10,7 +10,7 @@ For example, if you have XML attachments but client app entered as application/o
 The mailet configuration shown below will scan all incoming messages and find an email that has an attachment with *.xml file extension. If found, unless the Content-Type's subType of attached file is marked as XML (subTypePattern), the Content Type's Primary and Sub type values will be overwritten with the information provided, text/xml in this example. Different user-defined file extension and content type values can be used in the mailet configuration. But, as this can cause an error at the receiver side if not properly overwritten, care must be taken with the mailet configurations.
 
 
-```html
+```xml
 <mailet match="All" class="org.gatech.i3l.mail.OverrideContentType">
   <filePattern >.*\.xml</filePattern>  <!-- RegExp that must be matched to filename -->
   <subTypePattern>[xX][mM][lL]</subTypePattern>  <!-- RegExp of SubType that will be ignored -->
